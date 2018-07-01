@@ -1,4 +1,4 @@
-# MultiThreadExample
+Part1: MultiThreadExample - only 1 file
 how to use multiple threads to accelerate your process
 /**
  * this demo shows how to accelerate your process by using threads
@@ -13,3 +13,19 @@ how to use multiple threads to accelerate your process
  *
  * The equivalent in c# is Task.WaitAll
  */
+
+
+Part2: matrix calc - in the matrixexp folder
+
+A caculator for matrix,implemented by self-defined grammar using antlr4.
+
+The main purpose is to caculate a matrix from 2 matrices by user defined operation.
+
+Key point is the operation is UNKNOWN when the logic is written.
+
+Steps:1.defined grammar;
+
+      2.generate parser,lexer etc.,by antlr;
+
+      3.calculate result by listener using source matrices.
+
