@@ -1,0 +1,62 @@
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp -tree
+1+2
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp -gui
+
+
+
+1+2
+
+
+
+
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp
+
+D:\are\last-reply-math>grun SimpleMath -tree
+'grun' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp -tree
+1+2+3;
+^D
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp -tree
+1+2*3
+^Z
+(exp (exp (exp 1) + (exp 2)) * (exp 3))
+
+D:\are\last-reply-math>java org.antlr.v4.gui.TestRig SimpleMath exp -tree -gui
+1+2*3^Z
+^Z
+line 1:5 token recognition error at: ' '
+(exp (exp (exp 1) + (exp 2)) * (exp 3))
+
+D:\are\last-reply-math>java org.antlr.v4.Tool
+ANTLR Parser Generator  Version 4.7
+ -o ___              specify output directory where all output is generated
+ -lib ___            specify location of grammars, tokens files
+ -atn                generate rule augmented transition network diagrams
+ -encoding ___       specify grammar file encoding; e.g., euc-jp
+ -message-format ___ specify output style for messages in antlr, gnu, vs2005
+ -long-messages      show exception details when available for errors and warnin
+gs
+ -listener           generate parse tree listener (default)
+ -no-listener        don't generate parse tree listener
+ -visitor            generate parse tree visitor
+ -no-visitor         don't generate parse tree visitor (default)
+ -package ___        specify a package/namespace for the generated code
+ -depend             generate file dependencies
+ -D<option>=value    set/override a grammar-level option
+ -Werror             treat warnings as errors
+ -XdbgST             launch StringTemplate visualizer on generated code
+ -XdbgSTWait         wait for STViz to close before continuing
+ -Xforce-atn         use the ATN simulator for all predictions
+ -Xlog               dump lots of logging info to antlr-timestamp.log
+
+D:\are\last-reply-math>java org.antlr.v4.Tool -Dlanguage=CSharp SimpleMath.g4
+
+D:\are\last-reply-math>java org.antlr.v4.Tool -Dlanguage=CSharp SimpleMath.g4
+
+D:\are\last-reply-math>
