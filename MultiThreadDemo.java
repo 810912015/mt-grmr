@@ -1,4 +1,6 @@
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.*;
 
@@ -60,6 +62,25 @@ public class MultiThreadDemo {
             results.add(rr);
         }
     }
+    public void cf(){
+        results=new ArrayBlockingQueue<Result<Integer>>(100);
+        CompletableFuture cf=null;
+        for(int i=0;i<100;i++){
+            final int ii=i;
+            CompletableFuture cf1= CompletableFuture.runAsync(()->{
+                Result<Integer> rr=new Result<>();
+                rr.success=true;
+                rr.data=doIt(ii);
+                results.add(rr);
+            },tpe);
+            if(cf==null){
+                cf=cf1;
+            }else{
+                cf=CompletableFuture.allOf(cf,cf1);
+            }
+        }
+        cf.join();
+    }
     public void mt(){
         results=new ArrayBlockingQueue<Result<Integer>>(100);
         for(int i=0;i<100;i++){
@@ -89,9 +110,9 @@ public class MultiThreadDemo {
         ra.run();
         System.out.println(String.format("end %s,delta %d",name,System.currentTimeMillis()-ctm));
         System.out.println(results.size());
-        for(Result ts :results){
-            System.out.println(ts.toString());
-        }
+//        for(Result ts :results){
+//            System.out.println(ts.toString());
+//        }
     }
 
     public static void main(String args[]){
@@ -99,5 +120,6 @@ public class MultiThreadDemo {
         e.init();
         e.record("sequnecial", e::sequncial);
         e.record("mt",e::mt);
+        e.record("cf",e::cf);
     }
 }
