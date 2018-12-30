@@ -12,17 +12,18 @@ how to use multiple threads to accelerate your process
  * When completed,print the result.
  *
  * The equivalent in c# is Task.WaitAll
+
+* Blow is one of the run results: 
+* begin sequnecial,1546131962970
+* end sequnecial,delta 1609
+* 100
+* begin mt,1546131964579
+* end mt,delta 39
+* 100
+* begin cf,1546131964618
+* end cf,delta 31
+* 100
  */
-Blow is one of the run results: 
-begin sequnecial,1546131962970
-end sequnecial,delta 1609
-100
-begin mt,1546131964579
-end mt,delta 39
-100
-begin cf,1546131964618
-end cf,delta 31
-100
 
 
 Part2: matrix calc - in the matrixexp folder
